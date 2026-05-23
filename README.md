@@ -22,6 +22,7 @@ Maintained by Decantr AI as an open research and spec initiative, H.U.M.A.N. is 
 | --- | --- |
 | [Spec v0.1](spec/human-protocol-v0.1.md) | The current narrative specification. |
 | [Schema](spec/human-protocol.schema.json) | Loose JSON Schema for structured H.U.M.A.N. documents. |
+| [Temporal Experience Coherence Index](algorithms/temporal-experience-coherence-index.md) | Draft time-aware metric for evaluating agency, accessibility, evidence, and risk over time. |
 | [Healthcare Intake](examples/healthcare-intake.yaml) | High-risk AI-assisted form example. |
 | [AI Assistant Action](examples/ai-assistant-action.yaml) | Delegated AI action and consent example. |
 | [Cross-Device Handoff](examples/cross-device-handoff.yaml) | Multimodal device continuity example. |
