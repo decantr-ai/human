@@ -29,7 +29,24 @@ That can happen when:
 
 TECI treats time as a first-class part of UX.
 
-## 2. Core Concept
+## 2. Validation Status
+
+TECI is not validated.
+
+It is an unvalidated composite heuristic for structured discussion, design review, research planning, and longitudinal product critique. It should not be presented as a scientific instrument, compliance benchmark, certification method, or replacement for direct human research.
+
+Important caveats:
+
+- Default weights are illustrative until calibrated against real evidence.
+- TECI scores should not replace usability research, accessibility testing, standards conformance, legal review, safety analysis, or domain expert judgment.
+- The most useful output is not only the number. It is the surfaced stale evidence, unresolved risks, modality gaps, recovery failures, and agency loss over time.
+- A high score does not prove that an experience is humane, accessible, safe, ethical, or socially beneficial.
+- A low score should be treated as a signal for investigation, not as a complete diagnosis.
+- Validation requires empirical comparison against usability studies, accessibility audits, incident reports, support data, longitudinal research, field observations, and expert review.
+
+The algorithm is useful only if it makes hidden temporal failures easier to inspect and argue about. If the score hides uncertainty, compresses politics into math, or gives teams a way to avoid listening to people, it is being misused.
+
+## 3. Core Concept
 
 A H.U.M.A.N. document describes obligations across lenses such as agency, accessibility, modality, risk, evidence, and social meaning.
 
@@ -55,11 +72,11 @@ evidence_required:
 
 This obligation is only meaningful after a dialog closes, but it is critical at that moment. TECI captures that timing.
 
-## 3. Inputs
+## 4. Inputs
 
 TECI can operate on planned design data, observed product evidence, or both.
 
-### 3.1 Experience Model
+### 4.1 Experience Model
 
 From a H.U.M.A.N. document:
 
@@ -74,7 +91,7 @@ From a H.U.M.A.N. document:
 - `risk`
 - `social_meaning`
 
-### 3.2 Obligations
+### 4.2 Obligations
 
 An obligation is any claim about what the experience must preserve.
 
@@ -86,7 +103,7 @@ Examples:
 - "The watch handoff has a phone fallback."
 - "Generated text is reviewable before sending."
 
-### 3.3 Observations
+### 4.3 Observations
 
 An observation is evidence collected at a point in time.
 
@@ -115,7 +132,7 @@ observation:
   evidence_type: accessibility_test
 ```
 
-## 4. Time Model
+## 5. Time Model
 
 TECI evaluates an experience over a time window:
 
@@ -158,7 +175,7 @@ Example defaults:
 
 Interruption and recovery receive higher weights because many systems fail when the ideal path breaks.
 
-## 5. Obligation Weight
+## 6. Obligation Weight
 
 Each obligation gets a weight:
 
@@ -173,7 +190,7 @@ Where:
 - `R(o)` is the risk severity multiplier
 - `E(o)` is the evidence authority multiplier
 
-### 5.1 Lens Weight
+### 6.1 Lens Weight
 
 Example defaults:
 
@@ -192,7 +209,7 @@ Example defaults:
 
 These defaults intentionally privilege agency, accessibility, and risk because they are common failure points in AI-mediated experiences.
 
-### 5.2 Risk Severity Multiplier
+### 6.2 Risk Severity Multiplier
 
 | Risk Severity | Multiplier |
 | --- | ---: |
@@ -201,7 +218,7 @@ These defaults intentionally privilege agency, accessibility, and risk because t
 | high | 2.0 |
 | critical | 3.0 |
 
-### 5.3 Evidence Authority Multiplier
+### 6.3 Evidence Authority Multiplier
 
 | Evidence Type | Multiplier |
 | --- | ---: |
@@ -218,7 +235,7 @@ These defaults intentionally privilege agency, accessibility, and risk because t
 
 Evidence weighting does not mean lower-weight claims are unimportant. It means their authority is different.
 
-## 6. Evidence Decay
+## 7. Evidence Decay
 
 Evidence ages.
 
@@ -250,7 +267,7 @@ Example half-lives:
 
 The half-life should shorten when the product changes rapidly.
 
-## 7. Obligation Satisfaction
+## 8. Obligation Satisfaction
 
 For each obligation `o` at time `t`, TECI calculates satisfaction:
 
@@ -272,7 +289,7 @@ Suggested observation scores:
 
 The `max` keeps the strongest current evidence, but implementations may use weighted averages if they want multiple evidence streams to matter.
 
-## 8. Time-Weighted Coherence
+## 9. Time-Weighted Coherence
 
 At time `t`, overall coherence is:
 
@@ -296,11 +313,11 @@ TECI(T) = 100 * average(C(t_i))
 
 This makes time central: a system that works briefly but fails for long recovery periods scores lower than one that remains coherent across the journey.
 
-## 9. Penalties
+## 10. Penalties
 
 TECI includes penalties for unresolved time-sensitive harm.
 
-### 9.1 Unresolved Risk Penalty
+### 10.1 Unresolved Risk Penalty
 
 ```text
 URP = severity_weight * min(1, unresolved_duration / tolerance_window)
@@ -312,7 +329,7 @@ Examples:
 - A stale research source may have a longer tolerance window.
 - A failed undo path for an AI action may be high severity immediately.
 
-### 9.2 Recovery Latency Penalty
+### 10.2 Recovery Latency Penalty
 
 ```text
 RLP = recovery_weight * min(1, time_to_recovery / expected_recovery_time)
@@ -320,7 +337,7 @@ RLP = recovery_weight * min(1, time_to_recovery / expected_recovery_time)
 
 This rewards systems that recover quickly from error, interruption, and AI misfires.
 
-### 9.3 Modality Gap Penalty
+### 10.3 Modality Gap Penalty
 
 ```text
 MGP = required_missing_modalities / required_modalities
@@ -328,7 +345,7 @@ MGP = required_missing_modalities / required_modalities
 
 If a critical task works by pointer but not keyboard, voice, or screen reader when those modalities are required, the score drops.
 
-### 9.4 Agency Loss Penalty
+### 10.4 Agency Loss Penalty
 
 ```text
 ALP = count(missing_required_controls) / count(required_controls)
@@ -344,7 +361,7 @@ Required controls may include:
 - explicit confirmation
 - appeal or recourse
 
-## 10. Final Score
+## 11. Final Score
 
 The final score is:
 
@@ -367,7 +384,7 @@ Example penalty weights:
 | modality gap | c | 0.20 |
 | agency loss | d | 0.20 |
 
-## 11. Subscores
+## 12. Subscores
 
 TECI should report subscores, not only a single number.
 
@@ -383,7 +400,7 @@ Recommended subscores:
 | Social Integrity | Authorship, trust, and relational effects are not ignored. |
 | Temporal Coherence | The experience remains understandable before, during, after, interruption, and recovery. |
 
-## 12. Pseudocode
+## 13. Pseudocode
 
 ```text
 function calculateTECI(document, observations, window):
@@ -430,7 +447,7 @@ function calculateTECI(document, observations, window):
   }
 ```
 
-## 13. Example Interpretation
+## 14. Example Interpretation
 
 | TECI Score | Interpretation |
 | --- | --- |
@@ -440,7 +457,7 @@ function calculateTECI(document, observations, window):
 | 40-59 | Risky. Important obligations are unproven, stale, or broken across time. |
 | 0-39 | Incoherent or harmful. Human agency, access, recovery, or risk controls are failing. |
 
-## 14. Why Time Matters
+## 15. Why Time Matters
 
 Without time, a system can appear humane because it supports the initial interaction.
 
@@ -455,7 +472,7 @@ With time, the system must answer harder questions:
 
 TECI makes those questions measurable enough to discuss, compare, and improve.
 
-## 15. Cautions
+## 16. Cautions
 
 TECI is not a universal truth machine.
 
@@ -470,7 +487,7 @@ It should not be used to:
 
 The score is a decision aid. The explanations, penalties, stale evidence, and unresolved risks matter more than the number.
 
-## 16. Future Extensions
+## 17. Future Extensions
 
 Potential extensions:
 
@@ -482,4 +499,3 @@ Potential extensions:
 - per-domain weighting profiles
 - accessibility-specific temporal checks
 - visualization of coherence over time
-

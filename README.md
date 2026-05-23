@@ -53,6 +53,8 @@ H.U.M.A.N. Protocol is an attempt to name that layer.
 
 The [Temporal Experience Coherence Index](algorithms/temporal-experience-coherence-index.md) is a draft algorithm for scoring the experience, not the person. It treats time as a first-class UX dimension by asking whether agency, accessibility, evidence, modality support, risk recovery, and social meaning hold across phases like before, during, after, interruption, recovery, and repeated use.
 
+TECI is not validated. Its default weights are illustrative, and its score should not replace research, accessibility testing, standards conformance, or expert review. The valuable output is the investigation trail: stale evidence, unresolved risks, modality gaps, recovery failures, and agency loss that might otherwise stay hidden.
+
 ## Core Idea
 
 Every meaningful experience can be described through a small set of lenses:
