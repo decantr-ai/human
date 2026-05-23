@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1150" viewBox="0 0 1600 1150" role="img" aria-labelledby="title desc">
+  <title id="title">TECI Validation Lifecycle</title>
+  <desc id="desc">A lifecycle diagram showing how TECI should be strengthened through real flows, H.U.M.A.N. modeling, manual scoring, expert UX review, accessibility findings, user friction signals, domain weight tuning, and published risk examples.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101828"/>
+      <stop offset="46%" stop-color="#132d3a"/>
+      <stop offset="100%" stop-color="#22163a"/>
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#f8fafc" stop-opacity="0.24"/>
+      <stop offset="58%" stop-color="#58d5c9" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="cardA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#dff8f4" stop-opacity="0.94"/>
+    </linearGradient>
+
+    <linearGradient id="cardB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffaf0" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#ffe6bf" stop-opacity="0.96"/>
+    </linearGradient>
+
+    <linearGradient id="cardC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f2ff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#e1d4ff" stop-opacity="0.96"/>
+    </linearGradient>
+
+    <linearGradient id="cardD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0fbff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#c8edff" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="cardE" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff6f4" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#ffd4ca" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.26"/>
+    </filter>
+
+    <marker id="arrow" markerWidth="18" markerHeight="18" refX="13" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 1 1 L 13 6 L 1 11 Z" fill="#72f0df"/>
+    </marker>
+
+    <style>
+      .label {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        fill: #f8fafc;
+      }
+
+      .card-title {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 28px;
+        font-weight: 780;
+        fill: #111827;
+        letter-spacing: 0;
+      }
+
+      .card-body {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 19px;
+        font-weight: 520;
+        fill: #334155;
+        letter-spacing: 0;
+      }
+
+      .small {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 18px;
+        fill: #dbeafe;
+        letter-spacing: 0;
+      }
+
+      .micro {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        fill: #a7f3d0;
+      }
+
+      .connector {
+        fill: none;
+        stroke: #72f0df;
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-opacity: 0.86;
+        marker-end: url(#arrow);
+      }
+
+      .connector-soft {
+        fill: none;
+        stroke: #f8fafc;
+        stroke-width: 2;
+        stroke-dasharray: 8 12;
+        stroke-linecap: round;
+        stroke-opacity: 0.22;
+      }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1150" fill="url(#bg)"/>
+  <circle cx="800" cy="575" r="430" fill="url(#centerGlow)"/>
+  <path d="M 234 575 C 262 260, 510 100, 800 100 C 1090 100, 1338 260, 1366 575 C 1338 890, 1090 1050, 800 1050 C 510 1050, 262 890, 234 575 Z" class="connector-soft"/>
+  <path d="M 425 305 C 480 250, 520 240, 575 260" class="connector"/>
+  <path d="M 1025 260 C 1080 240, 1120 250, 1175 305" class="connector"/>
+  <path d="M 1333 380 C 1378 415, 1378 462, 1333 475" class="connector"/>
+  <path d="M 1333 625 C 1378 688, 1378 742, 1333 765" class="connector"/>
+  <path d="M 1165 840 C 1080 910, 982 928, 1025 888" class="connector"/>
+  <path d="M 575 888 C 490 928, 392 910, 425 840" class="connector"/>
+  <path d="M 257 765 C 214 688, 214 625, 257 625" class="connector"/>
+  <path d="M 257 475 C 214 420, 214 385, 257 380" class="connector"/>
+
+  <text x="92" y="82" class="micro">H.U.M.A.N. Protocol</text>
+  <text x="92" y="132" class="label" font-size="48" font-weight="820" letter-spacing="0">TECI Validation Lifecycle</text>
+  <text x="94" y="168" class="small">Make temporal UX claims stronger by forcing scores to meet independent evidence.</text>
+
+  <g transform="translate(580 405)" filter="url(#softShadow)">
+    <circle cx="220" cy="170" r="172" fill="#0f172a" stroke="#72f0df" stroke-width="3"/>
+    <circle cx="220" cy="170" r="142" fill="#162032" stroke="#fbbf24" stroke-width="2" stroke-opacity="0.55"/>
+    <text x="220" y="105" text-anchor="middle" class="label" font-size="27" font-weight="820">The Legitimation Loop</text>
+    <text x="220" y="146" text-anchor="middle" class="label" font-size="20" font-weight="660" fill="#e0f2fe">TECI is not proven</text>
+    <text x="220" y="176" text-anchor="middle" class="label" font-size="20" font-weight="660" fill="#e0f2fe">by a number.</text>
+    <text x="220" y="212" text-anchor="middle" class="label" font-size="20" font-weight="660" fill="#e0f2fe">It becomes useful when</text>
+    <text x="220" y="242" text-anchor="middle" class="label" font-size="20" font-weight="660" fill="#e0f2fe">it surfaces verifiable risks.</text>
+    <line x1="78" y1="250" x2="362" y2="250" stroke="#72f0df" stroke-width="2" stroke-opacity="0.55"/>
+    <text x="220" y="284" text-anchor="middle" class="label" font-size="18" font-weight="720" fill="#a7f3d0">Score less. Investigate more.</text>
+  </g>
+
+  <g transform="translate(90 230)" filter="url(#softShadow)">
+    <rect width="335" height="150" rx="18" fill="url(#cardA)" stroke="#72f0df" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#0f766e"/>
+    <text x="38" y="46" text-anchor="middle" class="label" font-size="22" font-weight="850">1</text>
+    <text x="76" y="47" class="card-title">Choose real flows</text>
+    <text x="32" y="87" class="card-body">Use production or realistic flows,</text>
+    <text x="32" y="114" class="card-body">not only idealized examples.</text>
+  </g>
+
+  <g transform="translate(575 185)" filter="url(#softShadow)">
+    <rect width="450" height="150" rx="18" fill="url(#cardB)" stroke="#fbbf24" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#b45309"/>
+    <text x="38" y="46" text-anchor="middle" class="label" font-size="22" font-weight="850">2</text>
+    <text x="76" y="47" class="card-title">Model phases and obligations</text>
+    <text x="32" y="87" class="card-body">Map before, during, after, interruption,</text>
+    <text x="32" y="114" class="card-body">recovery, repeat use, and required evidence.</text>
+  </g>
+
+  <g transform="translate(1175 230)" filter="url(#softShadow)">
+    <rect width="335" height="150" rx="18" fill="url(#cardC)" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#6d28d9"/>
+    <text x="38" y="46" text-anchor="middle" class="label" font-size="22" font-weight="850">3</text>
+    <text x="76" y="47" class="card-title">Score manually</text>
+    <text x="32" y="87" class="card-body">Record confidence, evidence age,</text>
+    <text x="32" y="114" class="card-body">severity, and missing signals.</text>
+  </g>
+
+  <g transform="translate(1175 475)" filter="url(#softShadow)">
+    <rect width="335" height="150" rx="18" fill="url(#cardD)" stroke="#7dd3fc" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#0369a1"/>
+    <text x="38" y="46" text-anchor="middle" class="label" font-size="22" font-weight="850">4</text>
+    <text x="76" y="47" class="card-title">Blind expert review</text>
+    <text x="32" y="87" class="card-body">Compare against independent UX</text>
+    <text x="32" y="114" class="card-body">severity and phase findings.</text>
+  </g>
+
+  <g transform="translate(1165 765)" filter="url(#softShadow)">
+    <rect width="335" height="150" rx="18" fill="url(#cardA)" stroke="#72f0df" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#047857"/>
+    <text x="38" y="46" text-anchor="middle" class="label" font-size="22" font-weight="850">5</text>
+    <text x="76" y="47" class="card-title">Add a11y findings</text>
+    <text x="32" y="84" class="card-body">Map keyboard, screen reader,</text>
+    <text x="32" y="111" class="card-body">focus, errors, zoom, motion,</text>
+    <text x="32" y="138" class="card-body">and recovery.</text>
+  </g>
+
+  <g transform="translate(575 815)" filter="url(#softShadow)">
+    <rect width="450" height="150" rx="18" fill="url(#cardE)" stroke="#fb7185" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#be123c"/>
+    <text x="38" y="46" text-anchor="middle" class="label" font-size="22" font-weight="850">6</text>
+    <text x="76" y="47" class="card-title">User friction over time</text>
+    <text x="32" y="87" class="card-body">Use support tickets, abandonment, retries,</text>
+    <text x="32" y="114" class="card-body">incidents, interviews, and long-term signals.</text>
+  </g>
+
+  <g transform="translate(90 765)" filter="url(#softShadow)">
+    <rect width="335" height="150" rx="18" fill="url(#cardB)" stroke="#fbbf24" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#b45309"/>
+    <text x="38" y="46" text-anchor="middle" class="label" font-size="22" font-weight="850">7</text>
+    <text x="76" y="47" class="card-title">Tune by domain</text>
+    <text x="32" y="87" class="card-body">Adjust weights and half-lives</text>
+    <text x="32" y="114" class="card-body">against observed consequences.</text>
+  </g>
+
+  <g transform="translate(90 475)" filter="url(#softShadow)">
+    <rect width="335" height="150" rx="18" fill="url(#cardC)" stroke="#a78bfa" stroke-width="2"/>
+    <circle cx="38" cy="38" r="22" fill="#6d28d9"/>
+    <text x="38" y="46" text-anchor="middle" class="label" font-size="22" font-weight="850">8</text>
+    <text x="76" y="47" class="card-title">Publish risk cases</text>
+    <text x="32" y="87" class="card-body">Show what TECI caught, missed,</text>
+    <text x="32" y="114" class="card-body">changed, and still cannot prove.</text>
+  </g>
+
+  <g transform="translate(170 995)">
+    <rect width="1260" height="82" rx="22" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+    <text x="34" y="35" class="micro" fill="#fbbf24">Time window scored across every flow</text>
+    <g transform="translate(34 48)">
+      <rect x="0" y="0" width="188" height="24" rx="12" fill="#2dd4bf" opacity="0.95"/>
+      <rect x="203" y="0" width="188" height="24" rx="12" fill="#fbbf24" opacity="0.95"/>
+      <rect x="406" y="0" width="188" height="24" rx="12" fill="#a78bfa" opacity="0.95"/>
+      <rect x="609" y="0" width="188" height="24" rx="12" fill="#fb7185" opacity="0.95"/>
+      <rect x="812" y="0" width="188" height="24" rx="12" fill="#7dd3fc" opacity="0.95"/>
+      <rect x="1015" y="0" width="177" height="24" rx="12" fill="#86efac" opacity="0.95"/>
+      <text x="94" y="18" text-anchor="middle" font-size="14" font-weight="850" fill="#0f172a" font-family="Inter, ui-sans-serif, system-ui">BEFORE</text>
+      <text x="297" y="18" text-anchor="middle" font-size="14" font-weight="850" fill="#0f172a" font-family="Inter, ui-sans-serif, system-ui">DURING</text>
+      <text x="500" y="18" text-anchor="middle" font-size="14" font-weight="850" fill="#0f172a" font-family="Inter, ui-sans-serif, system-ui">AFTER</text>
+      <text x="703" y="18" text-anchor="middle" font-size="14" font-weight="850" fill="#0f172a" font-family="Inter, ui-sans-serif, system-ui">INTERRUPTION</text>
+      <text x="906" y="18" text-anchor="middle" font-size="14" font-weight="850" fill="#0f172a" font-family="Inter, ui-sans-serif, system-ui">RECOVERY</text>
+      <text x="1104" y="18" text-anchor="middle" font-size="14" font-weight="850" fill="#0f172a" font-family="Inter, ui-sans-serif, system-ui">REPEAT USE</text>
+    </g>
+  </g>
+
+  <g transform="translate(1095 70)">
+    <rect width="415" height="86" rx="18" fill="#0f172a" stroke="#475569" stroke-width="2" opacity="0.96"/>
+    <circle cx="38" cy="43" r="13" fill="#72f0df"/>
+    <circle cx="38" cy="43" r="23" fill="#72f0df" opacity="0.14"/>
+    <text x="64" y="37" class="small" font-weight="780">Legitimacy test</text>
+    <text x="64" y="64" class="small" font-size="16" fill="#cbd5e1">Do the surfaced risks match what humans find?</text>
+  </g>
+</svg>

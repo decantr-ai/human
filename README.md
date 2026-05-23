@@ -55,6 +55,8 @@ The [Temporal Experience Coherence Index](algorithms/temporal-experience-coheren
 
 TECI is not validated. Its default weights are illustrative, and its score should not replace research, accessibility testing, standards conformance, or expert review. The valuable output is the investigation trail: stale evidence, unresolved risks, modality gaps, recovery failures, and agency loss that might otherwise stay hidden.
 
+![TECI validation lifecycle](assets/teci-validation-lifecycle.svg)
+
 ## Core Idea
 
 Every meaningful experience can be described through a small set of lenses:

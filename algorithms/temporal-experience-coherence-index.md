@@ -46,6 +46,8 @@ Important caveats:
 
 The algorithm is useful only if it makes hidden temporal failures easier to inspect and argue about. If the score hides uncertainty, compresses politics into math, or gives teams a way to avoid listening to people, it is being misused.
 
+![TECI validation lifecycle](../assets/teci-validation-lifecycle.svg)
+
 ## 3. Core Concept
 
 A H.U.M.A.N. document describes obligations across lenses such as agency, accessibility, modality, risk, evidence, and social meaning.
