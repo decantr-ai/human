@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" role="img" aria-labelledby="title desc">
+  <title id="title">Temporal Experience Coherence Index math statement</title>
+  <desc id="desc">A precise visual summary of the TECI draft algorithm equations from the H.U.M.A.N. Protocol.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f3ea"/>
+      <stop offset="48%" stop-color="#e9f2ef"/>
+      <stop offset="100%" stop-color="#f2ecf7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#24322f" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="900" fill="url(#bg)"/>
+  <rect x="80" y="72" width="1120" height="756" rx="28" fill="#fffdf8" stroke="#1f2d2a" stroke-opacity="0.18" filter="url(#shadow)"/>
+
+  <text x="132" y="142" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="700" fill="#17211f">
+    Temporal Experience Coherence Index
+  </text>
+  <text x="132" y="182" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" fill="#4f605c">
+    A time-aware metric for evaluating whether an experience preserves agency, accessibility, evidence, and risk controls over time.
+  </text>
+
+  <line x1="132" y1="218" x2="1148" y2="218" stroke="#1f2d2a" stroke-opacity="0.16"/>
+
+  <text x="132" y="270" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="26" fill="#192421">
+    W(o) = L(o) * P(o) * R(o) * E(o)
+  </text>
+  <text x="132" y="308" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" fill="#66736f">
+    obligation weight = lens weight * phase weight * risk multiplier * evidence authority multiplier
+  </text>
+
+  <text x="132" y="368" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="26" fill="#192421">
+    D(delta_t, h) = 0.5 ^ (delta_t / h)
+  </text>
+  <text x="132" y="406" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" fill="#66736f">
+    evidence decay by age delta_t and evidence half-life h
+  </text>
+
+  <text x="132" y="466" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="22" fill="#192421">
+    S(o, t) = max(score(obs) * confidence(obs) * D(age(obs), half_life(obs)))
+  </text>
+  <text x="132" y="504" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" fill="#66736f">
+    obligation satisfaction at time t from the strongest current evidence linked to obligation o
+  </text>
+
+  <text x="132" y="564" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="26" fill="#192421">
+    C(t) = sum(W(o) * S(o, t)) / sum(W(o))
+  </text>
+  <text x="132" y="602" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" fill="#66736f">
+    time-local coherence across active obligations
+  </text>
+
+  <text x="132" y="662" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="26" fill="#192421">
+    TECI(T) = 100 * integral(C(t), t0, t1) / duration(T)
+  </text>
+  <text x="132" y="700" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" fill="#66736f">
+    continuous form; discrete form is TECI(T) = 100 * average(C(t_i))
+  </text>
+
+  <rect x="132" y="728" width="1016" height="76" rx="16" fill="#17211f"/>
+  <text x="160" y="768" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="22" fill="#fffdf8">
+    TECI_final = clamp(0, 100, TECI - P)
+  </text>
+  <text x="160" y="792" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="18" fill="#dbe8df">
+    P = 100 * (a * URP + b * RLP + c * MGP + d * ALP)
+  </text>
+
+  <text x="132" y="834" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#66736f">
+    Penalties: unresolved risk, recovery latency, modality gap, and agency loss. The score evaluates the experience, not the person.
+  </text>
+</svg>

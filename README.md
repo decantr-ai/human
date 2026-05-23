@@ -47,6 +47,12 @@ The industry has excellent specialized standards and design systems, but there i
 
 H.U.M.A.N. Protocol is an attempt to name that layer.
 
+## Temporal Metric
+
+![Temporal Experience Coherence Index math statement](assets/teci-math-statement.png)
+
+The [Temporal Experience Coherence Index](algorithms/temporal-experience-coherence-index.md) is a draft algorithm for scoring the experience, not the person. It treats time as a first-class UX dimension by asking whether agency, accessibility, evidence, modality support, risk recovery, and social meaning hold across phases like before, during, after, interruption, recovery, and repeated use.
+
 ## Core Idea
 
 Every meaningful experience can be described through a small set of lenses:
