@@ -1,5 +1,13 @@
 # H.U.M.A.N. Protocol
 
+Humans do not move through the world as tasks, profiles, or conversion paths. We move through it as bodies, memories, questions, habits, fears, relationships, abilities, interruptions, hopes, and changing states of attention.
+
+As AI systems begin to see, speak, summarize, suggest, decide, and act with us, the old language of interface design starts to feel too small. The question is no longer only what a screen should show. It is how a system should understand the human condition well enough to preserve agency, dignity, accessibility, and meaning across devices and time.
+
+H.U.M.A.N. Protocol begins from that question.
+
+## What It Is
+
 **Human Understanding for Multimodal Agentic Navigation**
 
 H.U.M.A.N. Protocol is an open working draft for describing human-centered experiences across devices, AI agents, accessibility contexts, and time.
@@ -158,4 +166,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 MIT. See [LICENSE](LICENSE).
-
