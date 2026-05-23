@@ -1,0 +1,129 @@
+human_protocol_version: "0.1"
+experience:
+  name: "Cross-device boarding pass handoff"
+  domain: "travel"
+  purpose: "Let a traveler move from phone check-in to watch boarding without losing control, context, or accessibility."
+  stakeholders:
+    - traveler
+    - airline
+    - airport_staff
+
+human_intent:
+  primary_goal: "Present the right boarding credential at the right time."
+  emotional_context:
+    - hurried
+    - distracted
+    - spatially_constrained
+  success_means:
+    - "Boarding credential is available offline."
+    - "Traveler understands which device is active."
+    - "Fallback path is available if the watch fails."
+
+context:
+  environment:
+    - airport
+    - gate
+    - security_line
+    - low_connectivity
+  constraints:
+    - one_handed_use
+    - time_pressure
+    - glare
+    - crowding
+    - possible_battery_loss
+  domain_risk: "medium"
+
+modalities:
+  input:
+    - touch
+    - voice
+    - wrist_gesture
+  output:
+    - visual
+    - haptic
+    - audio
+  assistive:
+    - screen_reader
+    - large_text
+    - high_contrast
+
+interface:
+  patterns:
+    - device_handoff
+    - offline_fallback
+    - glanceable_status
+    - time_sensitive_notification
+  critical_components:
+    - boarding_pass
+    - device_status_indicator
+    - fallback_qr
+    - notification
+
+temporal_model:
+  before:
+    system_obligation:
+      - "Explain that boarding pass is available on multiple devices."
+      - "Cache credential for offline use."
+  during:
+    system_obligation:
+      - "Avoid unnecessary interaction at the gate."
+      - "Show the current valid credential."
+      - "Provide a fallback if watch display fails."
+  after:
+    system_obligation:
+      - "Expire sensitive credential appropriately."
+      - "Avoid retaining unnecessary travel context."
+
+agency:
+  human_control:
+    - choose_active_device
+    - disable_watch_handoff
+    - access_phone_fallback
+  system_control:
+    - sync_credential
+    - detect_time_relevance
+    - cache_offline
+  ai_role:
+    - none_required
+  ai_limits:
+    - "Must not infer travel changes without authoritative source data."
+
+accessibility:
+  obligations:
+    - "Credential remains accessible on phone if watch is unusable."
+    - "Important status does not rely only on color."
+    - "Text respects platform size settings where possible."
+    - "Haptic alerts do not become the only signal."
+  exclusion_risks:
+    - low_vision
+    - motor_limitation
+    - hearing_impairment
+    - device_battery_failure
+
+evidence:
+  platform_guidance:
+    - Apple_HIG
+    - Android_accessibility
+  claims:
+    - claim: "Cross-device experiences need an explicit fallback path."
+      type: design_preference
+      confidence: high
+
+risk:
+  high_risk:
+    - inaccessible_required_credential
+    - wrong_or_expired_pass
+    - device_failure_without_fallback
+  mitigations:
+    - offline_cache
+    - phone_fallback
+    - visible_active_status
+    - clear_expiration
+
+social_meaning:
+  relationship_effects:
+    - "Can reduce friction with gate staff."
+    - "Can increase stress if the traveler cannot tell which device has authority."
+  ethical_questions:
+    - "How much location and travel context should the system infer?"
+

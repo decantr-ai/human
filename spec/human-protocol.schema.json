@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human.decantr.ai/schemas/human-protocol.v0.1.json",
+  "title": "H.U.M.A.N. Protocol Document",
+  "description": "Loose schema for Human Understanding for Multimodal Agentic Navigation documents.",
+  "type": "object",
+  "required": ["human_protocol_version", "experience"],
+  "properties": {
+    "human_protocol_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "experience": {
+      "type": "object",
+      "required": ["name", "purpose"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "domain": { "type": "string" },
+        "purpose": { "type": "string", "minLength": 1 },
+        "scope": { "type": "string" },
+        "stakeholders": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "human_intent": {
+      "type": "object",
+      "properties": {
+        "primary_goal": { "type": "string" },
+        "secondary_goals": { "$ref": "#/$defs/stringList" },
+        "emotional_context": { "$ref": "#/$defs/stringList" },
+        "success_means": { "$ref": "#/$defs/stringList" },
+        "failure_means": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "environment": { "$ref": "#/$defs/stringList" },
+        "constraints": { "$ref": "#/$defs/stringList" },
+        "privacy_sensitivity": { "type": "string" },
+        "domain_risk": { "type": "string" },
+        "stakeholders": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "modalities": {
+      "type": "object",
+      "properties": {
+        "input": { "$ref": "#/$defs/stringList" },
+        "output": { "$ref": "#/$defs/stringList" },
+        "assistive": { "$ref": "#/$defs/stringList" },
+        "environmental": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "interface": {
+      "type": "object",
+      "properties": {
+        "patterns": { "$ref": "#/$defs/stringList" },
+        "critical_components": { "$ref": "#/$defs/stringList" },
+        "feedback": { "$ref": "#/$defs/stringList" },
+        "system_boundaries": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "temporal_model": {
+      "type": "object",
+      "properties": {
+        "before": { "$ref": "#/$defs/phase" },
+        "during": { "$ref": "#/$defs/phase" },
+        "after": { "$ref": "#/$defs/phase" },
+        "repeated_use": { "$ref": "#/$defs/phase" },
+        "interruption": { "$ref": "#/$defs/phase" },
+        "recovery": { "$ref": "#/$defs/phase" }
+      },
+      "additionalProperties": true
+    },
+    "agency": {
+      "type": "object",
+      "properties": {
+        "human_control": { "$ref": "#/$defs/stringList" },
+        "system_control": { "$ref": "#/$defs/stringList" },
+        "ai_role": { "$ref": "#/$defs/stringList" },
+        "ai_limits": { "$ref": "#/$defs/stringList" },
+        "requires_confirmation": { "$ref": "#/$defs/stringList" },
+        "undo_or_recourse": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "accessibility": {
+      "type": "object",
+      "properties": {
+        "obligations": { "$ref": "#/$defs/stringList" },
+        "alternate_paths": { "$ref": "#/$defs/stringList" },
+        "assistive_technology_expectations": { "$ref": "#/$defs/stringList" },
+        "exclusion_risks": { "$ref": "#/$defs/stringList" },
+        "standards": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "standards": { "$ref": "#/$defs/stringList" },
+        "platform_guidance": { "$ref": "#/$defs/stringList" },
+        "research": { "$ref": "#/$defs/stringList" },
+        "tests": { "$ref": "#/$defs/stringList" },
+        "policies": { "$ref": "#/$defs/stringList" },
+        "open_questions": { "$ref": "#/$defs/stringList" },
+        "claims": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidenceClaim" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "risk": {
+      "type": "object",
+      "properties": {
+        "high_risk": { "$ref": "#/$defs/stringList" },
+        "medium_risk": { "$ref": "#/$defs/stringList" },
+        "low_risk": { "$ref": "#/$defs/stringList" },
+        "mitigations": { "$ref": "#/$defs/stringList" },
+        "failure_modes": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "social_meaning": {
+      "type": "object",
+      "properties": {
+        "relationship_effects": { "$ref": "#/$defs/stringList" },
+        "authorship": { "type": "string" },
+        "trust_effects": { "$ref": "#/$defs/stringList" },
+        "ethical_questions": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "stringList": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "phase": {
+      "type": "object",
+      "properties": {
+        "user_state": { "type": "string" },
+        "system_obligation": { "$ref": "#/$defs/stringList" },
+        "ai_obligation": { "$ref": "#/$defs/stringList" },
+        "risks": { "$ref": "#/$defs/stringList" },
+        "evidence_required": { "$ref": "#/$defs/stringList" }
+      },
+      "additionalProperties": true
+    },
+    "evidenceClaim": {
+      "type": "object",
+      "required": ["claim", "type"],
+      "properties": {
+        "claim": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": [
+            "formal_standard",
+            "legal_requirement",
+            "platform_guideline",
+            "research_evidence",
+            "usability_test",
+            "accessibility_test",
+            "organizational_policy",
+            "product_decision",
+            "design_preference",
+            "hypothesis"
+          ]
+        },
+        "source": { "type": "string" },
+        "confidence": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "unknown"]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
+

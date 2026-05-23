@@ -1,0 +1,143 @@
+human_protocol_version: "0.1"
+experience:
+  name: "AI assistant sends an email on behalf of a user"
+  domain: "productivity"
+  purpose: "Let a user delegate drafting and sending a message while preserving authorship, consent, and reversibility."
+  stakeholders:
+    - sender
+    - recipient
+    - organization
+    - ai_system
+
+human_intent:
+  primary_goal: "Send a clear message with less effort."
+  secondary_goals:
+    - "Preserve personal intent."
+    - "Avoid accidental or unauthorized sending."
+    - "Understand what the AI changed."
+  success_means:
+    - "The user reviews the message before sending."
+    - "The recipient receives a message the sender stands behind."
+    - "The system preserves an audit trail."
+
+context:
+  environment:
+    - desktop
+    - mobile
+    - workplace
+  constraints:
+    - possible_sensitive_content
+    - social_consequence
+    - time_pressure
+  privacy_sensitivity: "medium_to_high"
+  domain_risk: "medium"
+
+modalities:
+  input:
+    - keyboard
+    - voice
+    - pointer
+  output:
+    - visual
+    - text
+    - screen_reader
+
+interface:
+  patterns:
+    - ai_draft
+    - diff_review
+    - explicit_confirmation
+    - undo_send_window
+  critical_components:
+    - prompt_input
+    - generated_draft
+    - tone_control
+    - recipient_list
+    - send_button
+    - undo_action
+
+temporal_model:
+  before:
+    user_state: "intent exists but wording may be incomplete"
+    system_obligation:
+      - "Clarify recipient and purpose when ambiguous."
+      - "Disclose that AI may draft or transform wording."
+  during:
+    ai_obligation:
+      - "Preserve the user's stated intent."
+      - "Avoid fabricating commitments, facts, attachments, or relationships."
+    system_obligation:
+      - "Show generated content before send."
+      - "Make recipient list visible."
+  after:
+    system_obligation:
+      - "Provide undo or recall window when possible."
+      - "Record whether AI assisted the draft if organizational policy requires it."
+
+agency:
+  human_control:
+    - review
+    - edit
+    - discard
+    - send
+    - undo
+  ai_role:
+    - draft
+    - summarize
+    - rewrite_tone
+    - suggest_subject
+  ai_limits:
+    - "Must not send without explicit confirmation."
+    - "Must not add unsupported factual claims."
+    - "Must not hide recipients or attachments."
+  requires_confirmation:
+    - send_message
+    - add_recipient
+    - attach_file
+
+accessibility:
+  obligations:
+    - "Generated draft is readable by assistive technology."
+    - "Diff or change summary has a non-color-only representation."
+    - "Send confirmation is keyboard reachable."
+    - "Undo action is announced and reachable."
+  exclusion_risks:
+    - screen_reader_diff_unreadable
+    - motor_impairment_under_time_limit
+    - cognitive_load_from_unclear_ai_changes
+
+evidence:
+  standards:
+    - WCAG_2_2
+  platform_guidance:
+    - platform_email_guidelines
+  claims:
+    - claim: "Sending on behalf of a user requires explicit confirmation."
+      type: product_decision
+      confidence: high
+    - claim: "AI-transformed text can change social meaning even when facts are preserved."
+      type: hypothesis
+      confidence: medium
+
+risk:
+  high_risk:
+    - unauthorized_send
+    - fabricated_commitment
+    - wrong_recipient
+    - social_misrepresentation
+  mitigations:
+    - visible_review
+    - send_confirmation
+    - recipient_confirmation
+    - undo_window
+    - generated_content_disclosure_when_required
+
+social_meaning:
+  authorship: "The human remains the accountable sender."
+  relationship_effects:
+    - "Can reduce communication labor."
+    - "Can flatten personal voice."
+    - "Can create uncertainty about whether the sender actually attended to the message."
+  ethical_questions:
+    - "When should recipients know AI helped write the message?"
+

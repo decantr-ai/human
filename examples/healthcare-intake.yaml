@@ -1,0 +1,162 @@
+human_protocol_version: "0.1"
+experience:
+  name: "AI-assisted healthcare intake"
+  domain: "healthcare"
+  purpose: "Help patients complete intake before a visit while preserving accuracy, privacy, and agency."
+  stakeholders:
+    - patient
+    - caregiver
+    - clinician
+    - healthcare_organization
+
+human_intent:
+  primary_goal: "Provide required medical information accurately."
+  secondary_goals:
+    - "Understand why sensitive information is requested."
+    - "Avoid repeating information already provided."
+    - "Correct mistakes before submission."
+  emotional_context:
+    - anxious
+    - time_constrained
+    - privacy_sensitive
+  success_means:
+    - "Patient understands each request."
+    - "Patient can pause, resume, and correct."
+    - "Provider receives structured information."
+
+context:
+  environment:
+    - home
+    - clinic
+    - mobile
+  constraints:
+    - sensitive_data
+    - variable_literacy
+    - possible_disability
+    - possible_caregiver_assistance
+  privacy_sensitivity: "high"
+  domain_risk: "high"
+
+modalities:
+  input:
+    - touch
+    - keyboard
+    - voice
+  output:
+    - visual
+    - text
+    - audio
+  assistive:
+    - screen_reader
+    - switch_control
+    - captions
+
+interface:
+  patterns:
+    - progressive_form
+    - review_before_submit
+    - inline_validation
+    - human_support_escape_hatch
+  critical_components:
+    - consent_prompt
+    - form_field
+    - validation_message
+    - correction_flow
+    - submit_confirmation
+
+temporal_model:
+  before:
+    user_state: "uncertain, possibly anxious"
+    system_obligation:
+      - "Set expectations clearly."
+      - "Explain what will happen after submission."
+      - "Disclose AI assistance if used."
+  during:
+    system_obligation:
+      - "Allow pause and resume."
+      - "Save progress safely."
+      - "Validate without shaming."
+      - "Explain why sensitive data is requested."
+  after:
+    system_obligation:
+      - "Show summary."
+      - "Allow correction."
+      - "Confirm submission."
+      - "Provide next steps."
+  repeated_use:
+    system_obligation:
+      - "Do not make users re-enter known information unnecessarily."
+      - "Do not over-personalize sensitive assumptions."
+
+agency:
+  human_control:
+    - edit
+    - undo
+    - pause
+    - opt_out
+    - request_human_help
+  ai_role:
+    - summarize
+    - clarify
+    - suggest
+  ai_limits:
+    - "Must not diagnose."
+    - "Must not hide uncertainty."
+    - "Must not submit without explicit confirmation."
+  requires_confirmation:
+    - final_submission
+    - sharing_sensitive_information
+
+accessibility:
+  obligations:
+    - "Keyboard operable."
+    - "Screen reader compatible."
+    - "Plain-language option."
+    - "Error messages programmatically associated with fields."
+    - "Color is not the only signal."
+    - "Reduced-motion respected."
+  exclusion_risks:
+    - low_literacy
+    - cognitive_load
+    - motor_impairment
+    - vision_impairment
+    - language_barrier
+  standards:
+    - WCAG_2_2
+    - WAI_ARIA
+
+evidence:
+  standards:
+    - WCAG_2_2
+    - WAI_ARIA
+    - ISO_9241_210
+  research:
+    - usability_test_with_patients
+    - accessibility_review
+    - clinician_workflow_validation
+  claims:
+    - claim: "Sensitive medical intake requires explicit review before submission."
+      type: product_decision
+      confidence: high
+
+risk:
+  high_risk:
+    - medical_misinformation
+    - privacy_leakage
+    - false_confidence
+    - inaccessible_required_task
+  mitigations:
+    - explicit_review_step
+    - audit_trail
+    - human_support
+    - source_disclosure
+    - correction_flow
+
+social_meaning:
+  relationship_effects:
+    - "May reduce staff burden."
+    - "May make patients feel processed rather than cared for."
+    - "May improve access for some users while excluding others."
+  ethical_questions:
+    - "Does automation preserve dignity, or merely optimize throughput?"
+

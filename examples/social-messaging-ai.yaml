@@ -1,0 +1,133 @@
+human_protocol_version: "0.1"
+experience:
+  name: "AI-assisted social message rewrite"
+  domain: "social_communication"
+  purpose: "Help a person rewrite a message while preserving intent, authorship, emotional nuance, and recipient trust."
+  stakeholders:
+    - sender
+    - recipient
+    - platform
+    - ai_system
+
+human_intent:
+  primary_goal: "Communicate clearly in a sensitive social context."
+  secondary_goals:
+    - "Avoid unnecessary conflict."
+    - "Preserve personal voice."
+    - "Avoid misrepresenting emotion."
+  emotional_context:
+    - uncertain
+    - vulnerable
+    - conflict_sensitive
+
+context:
+  environment:
+    - messaging_app
+    - private_conversation
+  constraints:
+    - interpersonal_risk
+    - tone_ambiguity
+    - cultural_context
+    - possible_power_imbalance
+  privacy_sensitivity: "high"
+  domain_risk: "medium"
+
+modalities:
+  input:
+    - keyboard
+    - voice
+  output:
+    - text
+    - visual
+    - screen_reader
+
+interface:
+  patterns:
+    - tone_rewrite
+    - compare_original_and_suggestion
+    - accept_or_edit
+    - disclosure_choice
+  critical_components:
+    - original_message
+    - rewrite_suggestion
+    - tone_label
+    - accept_button
+    - edit_button
+
+temporal_model:
+  before:
+    user_state: "has intent but may be unsure about wording"
+    system_obligation:
+      - "Let the user choose desired tone or goal."
+      - "Avoid assuming the user's emotional intent."
+  during:
+    ai_obligation:
+      - "Preserve the user's meaning."
+      - "Avoid adding commitments or emotional claims."
+      - "Make tone changes inspectable."
+  after:
+    system_obligation:
+      - "Let the user edit before sending."
+      - "Avoid training or memory use without clear consent."
+
+agency:
+  human_control:
+    - compare
+    - edit
+    - discard
+    - send
+  ai_role:
+    - rewrite
+    - simplify
+    - soften
+    - clarify
+  ai_limits:
+    - "Must not send automatically."
+    - "Must not impersonate feelings the user did not express."
+    - "Must not pressure the user toward a platform-preferred tone."
+  requires_confirmation:
+    - send_rewritten_message
+
+accessibility:
+  obligations:
+    - "Original and rewritten messages are both accessible."
+    - "Differences are understandable without color alone."
+    - "Tone labels are plain language."
+    - "Controls are keyboard operable."
+  exclusion_risks:
+    - cognitive_load_from_diffing
+    - screen_reader_unfriendly_comparison
+    - language_or_cultural_misinterpretation
+
+evidence:
+  standards:
+    - WCAG_2_2
+  research:
+    - user_research_on_ai_mediated_communication
+  claims:
+    - claim: "AI tone rewriting can alter social meaning even when factual meaning appears preserved."
+      type: hypothesis
+      confidence: medium
+
+risk:
+  high_risk:
+    - emotional_misrepresentation
+    - consent_erosion
+    - platform_norm_pressure
+    - private_context_exposure
+  mitigations:
+    - side_by_side_review
+    - explicit_send
+    - edit_before_send
+    - no_default_memory
+
+social_meaning:
+  authorship: "The sender remains responsible for the final message."
+  relationship_effects:
+    - "May help people communicate more clearly."
+    - "May make communication feel less personally authored."
+    - "May normalize mediated emotional expression."
+  ethical_questions:
+    - "When does assistance become manipulation?"
+    - "Should recipients know AI helped shape the message?"
+
