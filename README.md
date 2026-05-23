@@ -16,6 +16,20 @@ It is a loose schema and shared language for representing human intent, context,
 
 Maintained by Decantr AI as an open research and spec initiative, H.U.M.A.N. is not a UI framework, product suite, compliance standard, or replacement for accessibility standards.
 
+## Explore The Draft
+
+| Section | Purpose |
+| --- | --- |
+| [Spec v0.1](spec/human-protocol-v0.1.md) | The current narrative specification. |
+| [Schema](spec/human-protocol.schema.json) | Loose JSON Schema for structured H.U.M.A.N. documents. |
+| [Healthcare Intake](examples/healthcare-intake.yaml) | High-risk AI-assisted form example. |
+| [AI Assistant Action](examples/ai-assistant-action.yaml) | Delegated AI action and consent example. |
+| [Cross-Device Handoff](examples/cross-device-handoff.yaml) | Multimodal device continuity example. |
+| [Social Messaging AI](examples/social-messaging-ai.yaml) | AI-mediated communication example. |
+| [Principles](principles/) | Core lenses: agency, accessibility, temporality, multimodality, evidence, and social meaning. |
+| [Standards And Sources](references/standards-and-sources.md) | External standards and guidance this work references. |
+| [Contributing](CONTRIBUTING.md) | How to critique or improve the draft. |
+
 ## Why This Exists
 
 Interfaces are no longer only screens with controls. Modern experiences increasingly include:
